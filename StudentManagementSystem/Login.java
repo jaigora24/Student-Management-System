@@ -9,10 +9,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JDesktopPane;
+import java.awt.Color;
 
 public class Login extends JFrame {
 
@@ -38,11 +44,9 @@ public class Login extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 459, 450);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
-		JLabel loginpage = new JLabel("Login");
-		loginpage.setFont(new Font("Perpetua Titling MT", Font.BOLD, 18));
 		
 		JLabel loginUsername = new JLabel("Username");
 		loginUsername.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
@@ -56,46 +60,77 @@ public class Login extends JFrame {
 		password = new JPasswordField();
 		
 		JButton login = new JButton("Login");
-		login.setFont(new Font("Perpetua Titling MT", Font.BOLD, 12));
+		login.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if(username.getText().equals("admin") && password.getText().equals("admin123")) {
+					Menu menuPage = new Menu();
+					menuPage.show();
+					dispose();
+				}
+				else if(username.getText().isEmpty() || password.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Please enter the Username or Password :(");
+				}
+
+				else{
+					JOptionPane.showMessageDialog(null, "Incorrect Username or Password :(");
+				}
+
+				
+			}
+		});
+		login.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
+		
+		JDesktopPane desktopPane = new JDesktopPane();
+		desktopPane.setBackground(Color.GRAY);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(85)
+							.addContainerGap(65, Short.MAX_VALUE)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(loginUsername)
-								.addComponent(loginPassword))
-							.addGap(38)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(password)
-								.addComponent(username, GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(loginPassword)
+									.addGap(18)
+									.addComponent(password))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(loginUsername)
+									.addGap(18)
+									.addComponent(username, GroupLayout.PREFERRED_SIZE, 216, GroupLayout.PREFERRED_SIZE)))
+							.addGap(25))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(161)
-							.addComponent(login))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(169)
-							.addComponent(loginpage)))
-					.addContainerGap(68, Short.MAX_VALUE))
+							.addContainerGap()
+							.addComponent(desktopPane, GroupLayout.PREFERRED_SIZE, 408, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(15, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(131)
+					.addComponent(login, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(137, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(92)
-					.addComponent(loginpage)
-					.addGap(40)
+					.addContainerGap()
+					.addComponent(desktopPane, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
+					.addGap(47)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(loginUsername)
-						.addComponent(username, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(49)
+						.addComponent(username, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
+					.addGap(41)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(loginPassword)
-						.addComponent(password, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(57)
-					.addComponent(login)
-					.addContainerGap(75, Short.MAX_VALUE))
+						.addComponent(password, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
+					.addGap(37)
+					.addComponent(login, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(47, Short.MAX_VALUE))
 		);
+		
+		JLabel loginpage = new JLabel("Login");
+		loginpage.setBounds(160, 47, 75, 27);
+		desktopPane.add(loginpage);
+		loginpage.setFont(new Font("Perpetua Titling MT", Font.BOLD, 22));
 		contentPane.setLayout(gl_contentPane);
 	}
 }
