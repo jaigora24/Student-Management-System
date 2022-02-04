@@ -9,7 +9,7 @@ Server : xampp, phpmyadmin<br>
 
 ## How to run this project?
 
-**Step 1 :** Copy the repo URL by clicking on clone or download.<br>
+**Step 1 :** Copy the repo URL by clicking on clone or download.<br><br>
 **Step 2 :**  Go to "File" and then select "Import" in Eclipse IDE<br><br>
 **Step 3 :** Select "Projects from Git (with smart import)<br><br>
 *Step 4 :* Select "Clone URI" & then next<br><br>
