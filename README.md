@@ -21,6 +21,6 @@ Server : xampp, phpmyadmin<br>
 
 <img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/login.PNG" alt="login" width="50%" height="500"><br><br>
 <img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/menu.PNG" alt="main-menu" width="50%" height="700"><br><br>
-<img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/addStudent.PNG" alt="addStudent" width="50%" height="500"><br><br>
+<img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/addStudent.PNG" alt="addStudent" width="50%" height="600"><br><br>
 <img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/deleteStudent.PNG" alt="deleteStudent" width="50%" height="500"><br><br>
-<img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/updateStudent.PNG" alt="updateStudent" width="50%" height="500"><br><br>
+<img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/updateStudent.PNG" alt="updateStudent" width="55%" height="600"><br><br>
