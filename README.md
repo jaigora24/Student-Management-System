@@ -15,3 +15,12 @@ Server : xampp, phpmyadmin<br>
 *Step 4 :* Select "Clone URI" & then next<br><br>
 *Step 5 :* Paste the repo URL & then next & then finish<br><br>
 *Step 6 :* Now you can run the project<br><br>
+
+## Application Output
+
+
+<img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/login.PNG" alt="login" width="90%" height="400"><br><br>
+<img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/menu.PNG" alt="main-menu" width="90%" height="400"><br><br>
+<img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/addStudent.PNG" alt="addStudent" width="90%" height="400"><br><br>
+<img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/deleteStudent.PNG" alt="deleteStudent" width="90%" height="400"><br><br>
+<img src="https://github.com/jaigora24/Student-Management-System/blob/main/images/updateStudent.PNG" alt="updateStudent" width="90%" height="400"><br><br>
