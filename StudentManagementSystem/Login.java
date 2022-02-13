@@ -49,17 +49,20 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel loginUsername = new JLabel("Username");
+		loginUsername.setForeground(Color.BLACK);
 		loginUsername.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
 		
 		JLabel loginPassword = new JLabel("Password");
+		loginPassword.setForeground(Color.BLACK);
 		loginPassword.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
 		
 		username = new JTextField();
-		username.setColumns(10);
+		username.setColumns(10);    
 		
 		password = new JPasswordField();
 		
 		JButton login = new JButton("Login");
+		login.setForeground(Color.BLACK);
 		login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -128,6 +131,7 @@ public class Login extends JFrame {
 		);
 		
 		JLabel loginpage = new JLabel("Login");
+		loginpage.setForeground(Color.BLACK);
 		loginpage.setBounds(160, 47, 75, 27);
 		desktopPane.add(loginpage);
 		loginpage.setFont(new Font("Perpetua Titling MT", Font.BOLD, 22));
