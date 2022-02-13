@@ -18,6 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JDesktopPane;
 
 public class Student extends JFrame {
 
@@ -49,24 +51,30 @@ public class Student extends JFrame {
 
 	public Student() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 457, 453);
+		setBounds(100, 100, 588, 620);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JLabel studentDetails = new JLabel("Student Details");
-		studentDetails.setFont(new Font("Perpetua Titling MT", Font.BOLD, 18));
+		studentDetails.setForeground(Color.BLACK);
+		studentDetails.setFont(new Font("Perpetua Titling MT", Font.BOLD, 22));
 		
 		JLabel studentName = new JLabel("Student Name");
+		studentName.setForeground(Color.BLACK);
 		studentName.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
 		
 		JLabel entryNumber = new JLabel("Entry Number");
+		entryNumber.setForeground(Color.BLACK);
 		entryNumber.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
 		
 		JLabel emailAddress = new JLabel("Email Address");
+		emailAddress.setForeground(Color.BLACK);
 		emailAddress.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
 		
 		JLabel contactNumber = new JLabel("Contact Number");
+		contactNumber.setForeground(Color.BLACK);
 		contactNumber.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
 		
 		sname = new JTextField();
@@ -82,9 +90,11 @@ public class Student extends JFrame {
 		scontact.setColumns(10);
 		
 		JLabel homeCity = new JLabel("Home City");
+		homeCity.setForeground(Color.BLACK);
 		homeCity.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
 		
 		JButton submit = new JButton("Submit");
+		submit.setForeground(Color.BLACK);
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -102,8 +112,10 @@ public class Student extends JFrame {
 					}
 					else {
 						pst.executeUpdate();
+						JOptionPane.showMessageDialog(null, "Student added Successfully :)");
 						dispose();
-						JOptionPane.showMessageDialog(null, "Submit Successfully :)");
+						Menu menu = new Menu();
+						menu.show();
 					}
 				}
 				catch(Exception ex) {
@@ -112,69 +124,117 @@ public class Student extends JFrame {
 				
 			}
 		});
-		submit.setFont(new Font("Perpetua Titling MT", Font.BOLD, 12));
+		submit.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		shome = new JTextField();
 		shome.setColumns(10);
+		
+		JDesktopPane desktopPane = new JDesktopPane();
+		desktopPane.setBackground(Color.GRAY);
+		
+		JButton btnNewButton = new JButton("Cancel");
+		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Menu menu = new Menu();
+				menu.show();
+				dispose();
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		
+		JDesktopPane desktopPane_1 = new JDesktopPane();
+		desktopPane_1.setBackground(Color.GRAY);
+		
+		JDesktopPane desktopPane_2 = new JDesktopPane();
+		desktopPane_2.setBackground(Color.GRAY);
+		
+		JDesktopPane desktopPane_3 = new JDesktopPane();
+		desktopPane_3.setBackground(Color.GRAY);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addComponent(desktopPane, GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
 				.addGroup(gl_contentPane.createSequentialGroup()
+					.addComponent(desktopPane_1, GroupLayout.PREFERRED_SIZE, 563, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addComponent(desktopPane_2, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_contentPane.createSequentialGroup()
-								.addGap(116)
-								.addComponent(studentDetails))
-							.addGroup(gl_contentPane.createSequentialGroup()
-								.addGap(27)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-									.addComponent(studentName)
-									.addComponent(entryNumber)
-									.addComponent(emailAddress)
-									.addComponent(contactNumber)
-									.addComponent(homeCity))
-								.addPreferredGap(ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-									.addComponent(shome)
-									.addComponent(scontact)
-									.addComponent(semail)
-									.addComponent(sentry)
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(sname, GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-										.addPreferredGap(ComponentPlacement.RELATED)))))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(166)
-							.addComponent(submit)))
-					.addContainerGap(44, Short.MAX_VALUE))
+							.addGap(43)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(entryNumber)
+								.addComponent(studentName, GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+								.addComponent(emailAddress)
+								.addComponent(contactNumber)
+								.addComponent(homeCity))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(scontact, 242, 242, 242)
+								.addComponent(shome, 247, 247, 247)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+									.addComponent(semail)
+									.addComponent(sname)
+									.addComponent(sentry, GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)))
+							.addGap(34))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+							.addComponent(studentDetails)
+							.addGap(137))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(119)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(btnNewButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(submit, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))
+							.addGap(128)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(desktopPane_3, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
+					.addGap(18))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(studentDetails)
-					.addGap(34)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(studentName)
-						.addComponent(sname, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(40)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(entryNumber)
-						.addComponent(sentry, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(41)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(emailAddress)
-						.addComponent(semail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(37)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(contactNumber)
-						.addComponent(scontact, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(38)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(homeCity)
-						.addComponent(shome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-					.addComponent(submit)
-					.addGap(23))
+					.addComponent(desktopPane, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addGap(11)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(studentDetails)
+							.addGap(18)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(studentName, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+								.addComponent(sname, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
+							.addGap(28)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(sentry, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+								.addComponent(entryNumber))
+							.addGap(41)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(semail, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+								.addComponent(emailAddress))
+							.addGap(37)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(contactNumber)
+								.addComponent(scontact, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
+							.addGap(41)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(shome, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+								.addComponent(homeCity))
+							.addGap(43)
+							.addComponent(submit, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(desktopPane_2, GroupLayout.PREFERRED_SIZE, 506, GroupLayout.PREFERRED_SIZE))
+						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(desktopPane_3, GroupLayout.PREFERRED_SIZE, 506, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)))
+					.addGap(13)
+					.addComponent(desktopPane_1, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+					.addGap(6))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
