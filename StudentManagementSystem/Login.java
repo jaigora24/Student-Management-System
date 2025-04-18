@@ -22,68 +22,74 @@ import java.awt.Color;
 
 public class Login extends JFrame {
 
+	private static Login instance; // Singleton instance
 	private JPanel contentPane;
 	private JTextField username;
 	private JPasswordField password;
 
+	// Private constructor to prevent instantiation
+	private Login() {
+		initialize();
+	}
 
+	// Public method to get the single instance
+	public static Login getInstance() {
+		if (instance == null) {
+			instance = new Login();
+		}
+		return instance;
+	}
+
+	// Main method updated to use getInstance
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login frame = new Login();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+		EventQueue.invokeLater(() -> {
+			try {
+				Login frame = Login.getInstance();
+				frame.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		});
 	}
 
-	public Login() {
+	private void initialize() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 459, 450);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
+
 		JLabel loginUsername = new JLabel("Username");
 		loginUsername.setForeground(Color.BLACK);
 		loginUsername.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
-		
+
 		JLabel loginPassword = new JLabel("Password");
 		loginPassword.setForeground(Color.BLACK);
 		loginPassword.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
-		
+
 		username = new JTextField();
-		username.setColumns(10);    
-		
+		username.setColumns(10);
+
 		password = new JPasswordField();
-		
+
 		JButton login = new JButton("Login");
 		login.setForeground(Color.BLACK);
 		login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				if(username.getText().equals("admin") && password.getText().equals("admin123")) {
+				if (username.getText().equals("admin") && password.getText().equals("admin123")) {
 					Menu menuPage = new Menu();
 					menuPage.show();
 					dispose();
-				}
-				else if(username.getText().isEmpty() || password.getText().isEmpty()) {
+				} else if (username.getText().isEmpty() || password.getText().isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Please enter the Username or Password :(");
-				}
-
-				else{
+				} else {
 					JOptionPane.showMessageDialog(null, "Incorrect Username or Password :(");
 				}
-
-				
 			}
 		});
 		login.setFont(new Font("Perpetua Titling MT", Font.BOLD, 14));
-		
+
 		JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBackground(Color.GRAY);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -129,7 +135,7 @@ public class Login extends JFrame {
 					.addComponent(login, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(47, Short.MAX_VALUE))
 		);
-		
+
 		JLabel loginpage = new JLabel("Login");
 		loginpage.setForeground(Color.BLACK);
 		loginpage.setBounds(160, 47, 75, 27);
