@@ -1,0 +1,1 @@
+Tech Used - Java, Swing GUI, JDBC
