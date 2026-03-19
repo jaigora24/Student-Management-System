@@ -40,12 +40,12 @@ public class LoginPage extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel usernameText = new JLabel("Username");
-		usernameText.setFont(new Font("Tahoma", Font.BOLD, 14));
+		usernameText.setFont(new Font("Tahoma", Font.BOLD, 15));
 		usernameText.setBackground(UIManager.getColor("Button.foreground"));
 		usernameText.setBounds(100, 95, 85, 28);
 		contentPane.add(usernameText);
@@ -56,12 +56,12 @@ public class LoginPage extends JFrame {
 		uName.setColumns(10);
 		
 		password = new JPasswordField();
-		password.setBounds(183, 136, 154, 20);
+		password.setBounds(183, 136, 154, 50);
 		contentPane.add(password);
 		
 		JLabel passwordText = new JLabel("Password");
-		passwordText.setFont(new Font("Tahoma", Font.BOLD, 14));
-		passwordText.setBackground(Color.BLACK);
+		passwordText.setFont(new Font("Tahoma", Font.BOLD, 15));
+		passwordText.setBackground(Color.GREY);
 		passwordText.setBounds(100, 134, 85, 28);
 		contentPane.add(passwordText);
 		
