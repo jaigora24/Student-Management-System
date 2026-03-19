@@ -39,7 +39,7 @@ public class HomePage extends JFrame {
 		homepage.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Student Management System");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel.setBounds(110, 53, 205, 42);
 		homepage.add(lblNewLabel);
 		
@@ -51,7 +51,7 @@ public class HomePage extends JFrame {
 				dispose();
 			}
 		});
-		addStudentBtn.setFont(new Font("Tahoma", Font.BOLD, 12));
+		addStudentBtn.setFont(new Font("Tahoma", Font.BOLD, 13));
 		addStudentBtn.setBounds(127, 123, 163, 32);
 		homepage.add(addStudentBtn);
 		
@@ -63,7 +63,7 @@ public class HomePage extends JFrame {
 				dispose();
 			}
 		});
-		deleteStudentBtn.setFont(new Font("Tahoma", Font.BOLD, 12));
+		deleteStudentBtn.setFont(new Font("Tahoma", Font.BOLD, 13));
 		deleteStudentBtn.setBounds(127, 185, 163, 32);
 		homepage.add(deleteStudentBtn);
 		
@@ -75,7 +75,7 @@ public class HomePage extends JFrame {
 				dispose();
 			}
 		});
-		updateStudentBtn.setFont(new Font("Tahoma", Font.BOLD, 12));
+		updateStudentBtn.setFont(new Font("Tahoma", Font.BOLD, 13));
 		updateStudentBtn.setBounds(127, 251, 163, 32);
 		homepage.add(updateStudentBtn);
 		
@@ -87,7 +87,7 @@ public class HomePage extends JFrame {
 				dispose();
 			}
 		});
-		logoutBtn.setFont(new Font("Tahoma", Font.BOLD, 12));
+		logoutBtn.setFont(new Font("Tahoma", Font.BOLD, 13));
 		logoutBtn.setBounds(320, 431, 89, 23);
 		homepage.add(logoutBtn);
 		
@@ -99,7 +99,7 @@ public class HomePage extends JFrame {
 				dispose();
 			}
 		});
-		viewAll.setFont(new Font("Tahoma", Font.BOLD, 12));
+		viewAll.setFont(new Font("Tahoma", Font.BOLD, 13));
 		viewAll.setBounds(127, 314, 163, 32);
 		homepage.add(viewAll);
 
